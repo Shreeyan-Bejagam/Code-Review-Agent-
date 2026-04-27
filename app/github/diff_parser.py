@@ -1,4 +1,4 @@
-"""Utilities to parse unified diffs into structured hunks."""
+
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ HUNK_RE = re.compile(r"^@@ -(?P<old_start>\d+)(,(?P<old_count>\d+))? \+(?P<new_s
 
 
 def parse_unified_diff(diff_text: str) -> list[ParsedFileDiff]:
-    """Parse a unified diff payload into structured file hunks."""
+
 
     files: list[ParsedFileDiff] = []
     current_file: ParsedFileDiff | None = None
