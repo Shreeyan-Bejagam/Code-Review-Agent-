@@ -1,4 +1,4 @@
-"""Async GitHub API client with installation token auth."""
+
 
 from __future__ import annotations
 
@@ -12,15 +12,15 @@ from app.config import get_settings
 
 
 class GitHubClient:
-    """GitHub API client that mints and uses installation tokens."""
+
 
     def __init__(self) -> None:
-        """Initialize client settings."""
+
 
         self.settings = get_settings()
 
     def _build_app_jwt(self) -> str:
-        """Build signed JWT for GitHub App authentication."""
+
 
         now = datetime.now(timezone.utc)
         payload = {
@@ -39,7 +39,7 @@ class GitHubClient:
         return response
 
     async def get_installation_token(self, installation_id: int) -> str:
-        """Exchange app JWT for a short-lived installation token."""
+
 
         jwt_token = self._build_app_jwt()
         url = f"{self.settings.github_api_base_url}/app/installations/{installation_id}/access_tokens"
@@ -74,7 +74,7 @@ class GitHubClient:
         event: str = "COMMENT",
         comments: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
-        """Create a pull request review with optional inline comments."""
+
 
         token = await self.get_installation_token(installation_id)
         url = f"{self.settings.github_api_base_url}/repos/{repo_full_name}/pulls/{pr_number}/reviews"
