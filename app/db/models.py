@@ -1,4 +1,4 @@
-"""SQLAlchemy ORM models for persistent review data."""
+
 
 from __future__ import annotations
 
@@ -11,11 +11,11 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
 class Base(DeclarativeBase):
-    """Base declarative class."""
+
 
 
 class Repo(Base):
-    """Repository metadata tracked by the app."""
+
 
     __tablename__ = "repos"
 
@@ -28,7 +28,7 @@ class Repo(Base):
 
 
 class Review(Base):
-    """Represents a single review execution for a PR."""
+
 
     __tablename__ = "reviews"
 
@@ -48,7 +48,7 @@ class Review(Base):
 
 
 class Finding(Base):
-    """Stores a normalized finding produced by reviewers."""
+
 
     __tablename__ = "findings"
 
