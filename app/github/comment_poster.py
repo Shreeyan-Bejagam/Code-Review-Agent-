@@ -1,4 +1,4 @@
-"""Post review summaries and inline comments to GitHub."""
+
 
 from __future__ import annotations
 
@@ -8,10 +8,10 @@ from app.models.schemas import ReviewResult
 
 
 class CommentPoster:
-    """Converts review output into GitHub review API payloads."""
+
 
     def __init__(self, github_client: GitHubClient | None = None) -> None:
-        """Initialize with a GitHub client dependency."""
+
 
         self.settings = get_settings()
         self.github_client = github_client or GitHubClient()
@@ -23,7 +23,7 @@ class CommentPoster:
         installation_id: int,
         review_result: ReviewResult,
     ) -> dict:
-        """Post review summary and selected inline comments."""
+
 
         comments = [
             {"path": c.path, "line": c.line, "side": c.side, "body": c.body}
