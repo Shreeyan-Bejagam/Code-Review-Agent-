@@ -1,5 +1,3 @@
-"""Tests for unified diff parser."""
-
 from pathlib import Path
 
 from app.github.diff_parser import parse_unified_diff
