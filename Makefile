@@ -10,3 +10,4 @@ run-api:
 
 run-worker:
 	$(VENV_PYTHON) -m app.queue.worker
+
