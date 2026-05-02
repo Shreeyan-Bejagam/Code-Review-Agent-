@@ -45,3 +45,4 @@ See `app/` for API, webhook handling, GitHub integration, review engine, and per
 - No secrets are hardcoded.
 - All secrets/config values are environment-driven.
 - GitHub signatures are verified with HMAC-SHA256.
+
